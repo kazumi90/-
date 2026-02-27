@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Shooter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="900" height="600"></canvas>
+        <div id="ui">
+            <div class="healthBarContainer">
+                <div class="healthBar" id="healthBar"></div>
+            </div>
+            <div class="healthText">HP</div>
+            <div class="xpBarContainer">
+                <div class="xpBar" id="xpBar"></div>
+                <div class="xpText" id="xpText">Level 1</div>
+            </div>
+            <div id="score">Score: 0</div>
+            <button id="helpBtn" class="help-button">?</button>
+            <button id="soundBtn" class="help-button" style="right: 60px;">🔊</button>
+            <div id="waveDisplay" class="wave-display">Wave 1</div>
+        </div>
+        <div id="instructionsPanel" class="modal-overlay" style="display: none;">
+            <div class="instructions-panel">
+                <h2>How to Play</h2>
+                <div class="instructions-content">
+                    <div class="control-section">
+                        <h3>Movement</h3>
+                        <p><span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span> - Move character</p>
+                    </div>
+                    <div class="control-section">
+                        <h3>Combat</h3>
+                        <p><span class="mouse">🖱️ Click</span> - Manual shoot (2x damage)</p>
+                        <p><span class="aura">✨ Aura</span> - Auto-shoots nearby enemies</p>
+                    </div>
+                    <div class="control-section">
+                        <h3>Progression</h3>
+                        <p>💀 Kill enemies for XP</p>
+                        <p>⬆️ Level up to choose upgrades</p>
+                        <p>⏱️ Survival time grants XP</p>
+                    </div>
+                </div>
+                <button id="closeInstructions" class="close-btn">Got it!</button>
+            </div>
+        </div>
+        <div id="gameOver">
+            <h2>GAME OVER</h2>
+            <p id="finalScore">Score: 0</p>
+            <button id="restartBtn">Restart</button>
+        </div>
+        <div id="upgradeMenu" class="modal-overlay" style="display: none;">
+            <div class="upgrade-panel">
+                <h2>Level Up!</h2>
+                <p class="upgrade-subtitle">Choose your upgrade</p>
+                <div id="upgradeChoices" class="upgrade-grid">
+                </div>
+            </div>
+        </div>
+        <div id="instructions">WASD to Move | Click to shoot</div>
+    </div>
+
+    <script src="sounds.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
